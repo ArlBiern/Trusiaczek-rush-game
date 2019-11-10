@@ -7,17 +7,59 @@
   <meta name="description" content="2D game Trusiaczki Run">
   <meta name="author" content="ThinkTree">
   <title>Trusiaczki Run</title>
+  <link href="https://fonts.googleapis.com/css?family=Irish+Grover&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
-  <h1>This is my game</h1>
-  <section class='canvas_container'>
-    <canvas id="game"></canvas>
+  <header>
+    <h2>Welcome! <span>This is</span></h2>
+    <h3 class="title">Trusiaczek Fruits Rush Game!</h3>
+    <p class="score">Fruits collected: <span>0</span></p>
+    <p class="time">Your time: <span></span></p>
+  </header>
+  <section class="form_container">
+    <form class="form visible">
+      <!-- <div className="wide">
+          <label>Title</label>
+          <input type="text" ref="title"/>
+      </div>
+      <div className="wide">
+          <label>Genre</label>
+          <select ref="genre">
+              {genresOptions}
+          </select>
+      </div>
+      <div className="wide">
+          <label>Poster</label>
+          <input type="text" ref="poster" />
+      </div>
+      <div className="wide">
+          <label>Rating</label>
+          <select ref="rate">
+              {ratings}
+          </select>
+      </div> -->
+      <input type="submit" value="Start a game!" />
+    </form>
+    <button class="reset_game">Reset game</button>
+    <button class="new_game">Start new game</button>
   </section>
-  <section class="source_section">
+  <section class='canvas_container'>
+    <canvas id="game">Canvas not supported</canvas>
+    <div class="game_overlay">
+      <p>Choose your preferences and start a game</p>
+    </div>
+  </section>
+  <section class="source_container">
     <img id="player" src="img/trus_m.png" alt="ThinkTree">
+    <img id="arrow" src="img/arrow.png" alt="arrow">
     <img id="apple" src="img/apple.png" alt="apple">
+    <img id="watermelon" src="img/watermelon.png" alt="watermelon">
+    <img id="pear" src="img/pear.png" alt="pear">
+    <img id="orange" src="img/orange.png" alt="orange">
+    <img id="strawberry" src="img/strawberry.png" alt="strawberry">
+    <img id="banana" src="img/banana.png" alt="banana">
   </section>
 
   <script src="index.js"></script>

@@ -4,65 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="2D game Trusiaczki Run">
+  <meta name="description" content="2D Trusiaczek fruits rush game">
   <meta name="author" content="ThinkTree">
-  <title>Trusiaczki Run</title>
+  <title>Trusiaczki Rush</title>
   <link href="https://fonts.googleapis.com/css?family=Irish+Grover&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style-prefixed.css">
   <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
   <header>
-    <h2>Welcome! <span>This is</span></h2>
+    <h2>Welcome! <span>This is...</span></h2>
     <h3 class="title">Trusiaczek Fruits Rush Game!</h3>
-    <p class="score">Fruits collected: <span>0</span></p>
-    <p class="time">Your time: <span></span></p>
   </header>
-  <section class="form_container">
-    <form class="form visible">
-      <!-- <div className="wide">
-          <label>Title</label>
-          <input type="text" ref="title"/>
-      </div>
-      <div className="wide">
-          <label>Genre</label>
-          <select ref="genre">
-              {genresOptions}
-          </select>
-      </div>
-      <div className="wide">
-          <label>Poster</label>
-          <input type="text" ref="poster" />
-      </div>
-      <div className="wide">
-          <label>Rating</label>
-          <select ref="rate">
-              {ratings}
-          </select>
-      </div> -->
-      <input type="submit" value="Start a game!" />
-    </form>
-    <button class="reset_game">Reset game</button>
-    <button class="new_game">Start new game</button>
+  <section class="handle_container">
+    <div class="game_buttons">
+      <button class="start_game visible">Start game</button>
+      <button class="reset_game">Reset game</button>
+    </div>
+    <div class="game_result">
+      <p class="score">Fruits collected: <span>0</span></p>
+      <p class="time">Your time: <span></span></p>
+    </div>
   </section>
   <section class='canvas_container'>
     <canvas id="game">Canvas not supported</canvas>
-    <div class="game_overlay">
-      <p>Choose your preferences and start a game</p>
+    <div class="game_overlay visible">
+      <p>Collect all fruits as fast as you can.</p>
+      <p>Use arrows to move.</p>
+      <p>Click Start and let the fun begin :)</p>
     </div>
   </section>
-  <section class="source_container">
-    <img id="player" src="img/trus_m.png" alt="ThinkTree">
-    <img id="arrow" src="img/arrow.png" alt="arrow">
-    <img id="apple" src="img/apple.png" alt="apple">
-    <img id="watermelon" src="img/watermelon.png" alt="watermelon">
-    <img id="pear" src="img/pear.png" alt="pear">
-    <img id="orange" src="img/orange.png" alt="orange">
-    <img id="strawberry" src="img/strawberry.png" alt="strawberry">
-    <img id="banana" src="img/banana.png" alt="banana">
+  <section class="results_container">
+    <h3>Top 10 best results: </h3>
+    <ul class="results">
+    </ul>
   </section>
-
+  <footer>
+    <div class="footer_container">
+      <p>Copyright 2019 ThinkTree</p>
+      <img src="img/logo.png" alt="ThinkTree logo">
+    </div>
+  </footer>
   <script src="index.js"></script>
-
 </body>
 </html>

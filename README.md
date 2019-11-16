@@ -10,13 +10,13 @@ Just try to collect all fruits as fast as you can ;)
 Use arrows to move Trusiaczek (left, right, up).
 
 ### Code information
-Game itslef is made in Canvas. Some main features:
+Game itself is made in Canvas. Some main features:
 * game elements coordinates are stored in JSON and loaded to js by `fetchData()` function,
 * game elements are created by means of `createTerrainBoxes(arr)`, `createJumpBoxes(arr)` and `createFruits(arr)`,
-* there are two mian objects (`player`, `controller`) which contains crutial position data and movement status,
-* collision detection is based on player and game elemenst position comparison (iteration and if statements),
-* animation and loop based on `requestAnimationFrame()` method,
-* game results are stored in Local Storage (ten best results are presentent in HTML).
+* there are two main objects (`player`, `controller`) which contains crucial position data and movement status,
+* collision detection is based on player and game element position comparison (iteration and if statements),
+* animation and loop based on `requestAnimationFrame()` smethod,
+* game results are stored in Local Storage (ten best results are presented in HTML).
 
 ## Technologies used
 * JavaScript
@@ -24,7 +24,7 @@ Game itslef is made in Canvas. Some main features:
 * HTML
 
 ## Additional information
-Due to collison detection check once an every frame in case of jump and fast player acceleration box elements such as terrain and jumpBoxes should be placed accordingly to `velocity` and `playerImg.height`. This is something that should be improved and I will be working on this in the future.
+Due to collision detection check once an every frame in case of jump and fast player acceleration box elements such as terrain and jumpBoxes should be placed accordingly to `velocity` and `playerImg.height`. This is something that should be improved and I will be working on this in the future.
 
 ## Credits
 * Fruits, player, jumBox and background images made by [FreeFrogs](https://github.com/freefrogs).

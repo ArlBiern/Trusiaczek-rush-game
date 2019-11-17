@@ -1,5 +1,5 @@
 # Trusiaczek fruits rush game
-** You can see the project here:** [Trusiaczek fruits rush game]()
+**You can see the project here:** [Trusiaczek fruits rush game](https://kombajn27.github.io/CodersCamp-Project2/)
 
 ## Description
 CodersCamp second project focused on JS usage.

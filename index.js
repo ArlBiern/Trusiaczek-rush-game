@@ -8,21 +8,21 @@ const resetGameBtn = document.querySelector('.reset_game');
 const resultsList = document.querySelector('.results');
 
 // CREATING ELEMENTS IMG
-const playerImg = new Image();
+const playerImg = new Image(45, 57);
 playerImg.src = './img/trus_m.png';
-const arrowImg = new Image();
+const arrowImg = new Image(40, 40);
 arrowImg.src = './img/arrow.png';
-const appleImg = new Image();
+const appleImg = new Image(43, 45);
 appleImg.src = './img/apple.png';
-const bananaImg = new Image();
+const bananaImg = new Image(35, 44);
 bananaImg.src = './img/banana.png';
-const orangeImg = new Image();
+const orangeImg = new Image(38, 42);
 orangeImg.src = './img/orange.png';
-const strawberryImg = new Image();
+const strawberryImg = new Image(37, 50);
 strawberryImg.src = './img/strawberry.png';
-const pearImg = new Image();
+const pearImg = new Image(37, 48);
 pearImg.src = './img/pear.png';
-const watermelonImg = new Image();
+const watermelonImg = new Image(43, 45);
 watermelonImg.src = './img/watermelon.png';
 let possibleFruits = [appleImg, bananaImg, strawberryImg, orangeImg, pearImg, watermelonImg];
 let fruitsArray = [];
@@ -46,7 +46,6 @@ ctx.canvas.width = canvasWidth;
 
 // Setting results list
 function updateList(results = []) {
-  console.log(results);
   let sortedResults = results.sort((a, b) => a[1] - b[1]);
   resultsList.innerHTML = sortedResults.map((result, i) => {
     if (i < 10) {
@@ -105,22 +104,6 @@ function createFruitsArray(arr) {
   }
 }
 
-// Fetching data and generating arrays of canvas coordinates
-async function fetchData() {
-  let promise = await fetch('data.json');
-  let rawData = await promise.text();
-
-  let [terrain, jump, fruits ] = JSON.parse(rawData);
-
-  terrainBoxes = [-(canvasWidth/gameSize), -100, (canvasWidth/gameSize), canvasHeight + 100]
-                  .concat(terrain.values, gameSize*canvasWidth, -100, (canvasWidth/gameSize), canvasHeight + 100);
-  jumpBoxesCoordinates = jump.values;
-  boxCoordinates = terrainBoxes.concat(jumpBoxesCoordinates);
-  fruitsCoordinates = fruits.values;
-  createFruitsArray(fruitsCoordinates);
-}
-fetchData();
-
 // Creating game elements functions
 function createTerrainBoxes(arr) {
   for(let i = 1; i <= arr.length; i+=4 ) {
@@ -143,6 +126,23 @@ function createFruits(arr) {
     ctx.drawImage(arr[i-1], arr[i], arr[i+1], arr[i+2], arr[i+3]);
   }
 }
+
+// Fetching data and generating arrays of canvas coordinates
+async function fetchData() {
+  let promise = await fetch('data.json');
+  let rawData = await promise.text();
+  let [terrain, jump, fruits ] = await JSON.parse(rawData);
+
+  terrainBoxes = [-(canvasWidth/gameSize), -100, (canvasWidth/gameSize), canvasHeight + 100]
+                  .concat(terrain.values, gameSize*canvasWidth, -100, (canvasWidth/gameSize), canvasHeight + 100);
+  jumpBoxesCoordinates = jump.values;
+  boxCoordinates = terrainBoxes.concat(jumpBoxesCoordinates);
+  fruitsCoordinates = fruits.values;
+  createFruitsArray(fruitsCoordinates);
+
+  startGameBtn.classList.add('visible');
+}
+fetchData();
 
 // Elements (box, jumpbox) collision detection (launched on each frame)
 function collisionDetection(arr) {

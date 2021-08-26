@@ -14,5 +14,8 @@
     "autoprefixer-cli": "^1.0.0",
     "glob-run": "^0.1.7",
     "nu-html-checker": "^0.1.0"
+  },
+  "dependencies": {
+    "gettext.js": "^1.0.0"
   }
 }

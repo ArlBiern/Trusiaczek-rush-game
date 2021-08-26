@@ -36,17 +36,43 @@
 body {
   font-family: var(--main-font);
   font-weight: 400;
-  min-width: 320px;
+  min-width: 540px;
   background-color:  var(--main-color);
   font-family: var(--main-font);
   color: var(--contrast-color);
 }
 
-.canvas_container, header, .handle_container, .results_container, footer {
+.canvas_container, header, .handle_container, .results_container, footer, .level_container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+.mobile_true {
+  text-align: center;
+  margin: 50px 20px;
+  padding: 20px 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* === LANG BTN === */
+.lang_btn {
+  font-size: calc(var(--rel-size)*0.5);
+  display: inline-block;
+  position: absolute;
+  right: 5vw;
+  top: 20px;
+
+  background-color: var(--contrast-color);
+  border: 2px solid var(--contrast-color);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
 }
 
 /* === HEADER === */
@@ -54,6 +80,20 @@ body {
 header {
   flex-direction: column;
   align-items: center;
+  margin-top: 40px;
+}
+
+.lang_btn:hover {
+  background-color: #9EF53A;
+  color: var(--contrast-color);
+}
+
+.lang_btn:active {
+  background-color: #F5593A;
+}
+
+.lang_btn:focus {
+  outline: none;
 }
 
 header h2 {
@@ -85,8 +125,86 @@ header h2 span {
   margin-top: 40px;
 }
 
+.level_container {
+  font-size: calc(var(--rel-size)*0.7);
+  font-weight: bold;
+  margin-bottom: 40px;
+  align-content: center;
+  padding: 10px;
+}
+
+.level_container p {
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.levels button {
+  font-size: calc(var(--rel-size)*0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font: var(--main-font);
+  color: var(--contrast-color);
+  margin-right: 10px;
+  letter-spacing: 2px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* TUTAJ MUSZĘ COŚ POPRAWIĆ */
+
+.levels .inactive {
+  color: #000;
+  background-color: #ccc;
+}
+
+.levels .chosen {
+  color: #fff;
+  background-color: var(--contrast-color);
+}
+
+.levels button:hover {
+  color: #fff;
+  background-color: var(--contrast-color);
+}
+
+.levels button:focus {
+  outline: 0;
+}
+
+.btn_easy {
+  background-color:#9EF53A ;
+}
+
+.btn_medium {
+  background-color: #3AF5BE;
+}
+
+.btn_hard {
+  background-color: #F5593A;
+}
+
 .game_buttons, .game_result {
   text-align: center;
+}
+
+.game_result {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 750px;
+  margin: 0 auto;
+}
+
+.time {
+  display: flex;
+  justify-content: center;  
+}
+
+.time p {
+  min-width: 100px;
+  margin: 0;
+  font-size: calc(var(--rel-size)*0.75);
 }
 
 .start_game, .reset_game {
@@ -118,12 +236,25 @@ header h2 span {
   display: inline-block;
 }
 
-.game_result p {
+
+.score {
   font-size: calc(var(--rel-size)*0.75);
   padding: calc(var(--rel-size)*0.25);
   display: inline-block;
   margin: calc(var(--rel-size)*0.25) var(--rel-size) 0;
-  min-width: 250px;
+  min-width: 150px;
+}
+
+.time p {
+  margin: 0;
+}
+
+.time p:last-of-type {
+  min-width: 100px;;
+}
+
+.game_result span {
+  font-size: calc(var(--rel-size)*0.75);
 }
 
 /* === CANVAS === */
@@ -230,4 +361,10 @@ footer {
   .game_result p {
     width: 200px;
   }
+}
+
+/* === HIDE LAND ELEMENTS === */
+
+.hide {
+  display: none;
 }

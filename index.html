@@ -12,36 +12,81 @@
   <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body>
+  <div>
+    <button class="lang_btn hide" data-lang="en">Wersja polska</button>
+    <button class="lang_btn" data-lang="pl">English version</button>
+  </div>
   <header>
-    <h2>Welcome! <span>This is...</span></h2>
-    <h3 class="title">Trusiaczek Fruits Rush Game!</h3>
+    <h2 data-lang="en">Welcome! <span class="hide" data-lang="en">This is...</span></h2>
+    <h2 data-lang="pl">Witamy! <span data-lang="pl">Ta gra to...</span></h2>
+    <h3 class="title hide" data-lang="en">Trusiaczek Fruits Rush Game!</h3>
+    <h3 class="title" data-lang="pl">Trusiaczkowe owocowe łowy!</h3>
   </header>
-  <section class="handle_container">
-    <div class="game_buttons">
-      <button class="start_game">Start game</button>
-      <button class="reset_game">Reset game</button>
-    </div>
-    <div class="game_result">
-      <p class="score">Fruits collected: <span>0</span></p>
-      <p class="time">Your time: <span></span></p>
-    </div>
-  </section>
-  <section class='canvas_container'>
-    <canvas id="game">Canvas not supported</canvas>
-    <div class="game_overlay visible">
-      <p>Collect all fruits as fast as you can.</p>
-      <p>Use arrows to move.</p>
-      <p>Click Start and let the fun begin :)</p>
-    </div>
-  </section>
-  <section class="results_container">
-    <h3>Top 10 best results: </h3>
-    <ul class="results">
-    </ul>
-  </section>
+  <div class="mobile_check">
+    <section class="handle_container">
+      <div class="level_container">  
+        <p class="hide" data-lang="en">Choose level:</p> 
+        <p data-lang="pl">Wybierz poziom:</p> 
+        <div class="levels">
+          <button class="btn_easy" data-lang="pl" data-level="easy">Łatwy</button>
+          <button class="btn_medium" data-lang="pl" data-level="medium">Średni</button>
+          <button class="btn_hard" data-lang="pl" data-level="hard">Trudny</button>
+          <button class="btn_easy hide" data-lang="en" data-level="easy">Easy</button>
+          <button class="btn_medium hide" data-lang="en" data-level="medium">Medium</button>
+          <button class="btn_hard hide" data-lang="en" data-level="hard">Hard</button>
+        </div>
+      </div>
+      <div class="game_buttons">
+        <button class="start_game hide" data-start="start" data-lang="en">Start game</button>
+        <button class="start_game" data-start="start" data-lang="pl">Zacznij grę</button>
+        <button class="reset_game hide" data-lang="en">Reset game</button>
+        <button class="reset_game" data-lang="pl">Resetuj grę</button>
+      </div>
+      <div class="game_result">
+        <p class="score hide" data-lang="en">Fruits collected: <span>0</span></p>
+        <p class="score" data-lang="pl">Zebrane owoce: <span>0</span></p>
+        <div class="time">
+          <p class="hide" data-lang="en">Your time:</p>
+          <p data-lang="pl">Twój czas:</p>
+          <p>
+            <span class="seconds">00</span><span>:</span><span class="tens">00</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class='canvas_container'>
+      <canvas id="game">Canvas not supported</canvas>
+      <div class="game_overlay visible">
+        <p class="hide" data-lang="en">Collect all fruits as fast as you can.</p>
+        <p data-lang="pl">Zbierz jak najszybciej wszsytkie owoce.</p>
+        <p class="hide" data-lang="en">Use arrows to move.</p>
+        <p data-lang="pl">Poruszaj się strzałkami.</p>
+        <p class="hide" data-lang="en">Click Start and let the fun begin :)</p>
+        <p data-lang="pl">Naciśnij start i zacznij zabawę :)</p>
+      </div>
+    </section>
+    <section class="results_container">
+      <h3 class="hide" data-lang="en">Easy - top 10 best results: </h3>
+      <h3 data-lang="pl">Łatwy - 10 najlepszych wyników: </h3>
+      <ul class="results" data-results="easy">
+      </ul>
+    </section>
+    <section class="results_container">
+      <h3 class="hide" data-lang="en">Medium - top 10 best results: </h3>
+      <h3 data-lang="pl">Średni - 10 najlepszych wyników: </h3>
+      <ul class="results" data-results="medium">
+      </ul>
+    </section>
+    <section class="results_container">
+      <h3 class="hide" data-lang="en">Hard - top 10 best results: </h3>
+      <h3 data-lang="pl">Trudny - 10 najlepszych wyników: </h3>
+      <ul class="results" data-results="hard">
+      </ul>
+    </section>
+  </div>
   <footer>
     <div class="footer_container">
-      <p>Copyright 2019 ThinkTree</p>
+      <p>Copyright 2020 ThinkTree</p>
       <img src="img/logo.png" alt="ThinkTree logo">
     </div>
   </footer>

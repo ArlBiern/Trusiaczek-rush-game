@@ -199,12 +199,20 @@ header h2 span {
 .time {
   display: flex;
   justify-content: center;  
+  min-width: 200px;
 }
 
 .time p {
   min-width: 100px;
   margin: 0;
   font-size: calc(var(--rel-size)*0.75);
+}
+
+.time .game_time {
+  width: 100px;
+  font-size: calc(var(--rel-size)*0.75);
+  font-family: monospace;
+  font-weight: 600;
 }
 
 .start_game, .reset_game {
@@ -235,7 +243,6 @@ header h2 span {
 .start_game.visible, .reset_game.visible {
   display: inline-block;
 }
-
 
 .score {
   font-size: calc(var(--rel-size)*0.75);

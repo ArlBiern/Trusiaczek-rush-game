@@ -284,12 +284,13 @@ const gameApp = () => {
         if (score == fruitsCoordinates.length / 2) {
           endTime = new Date();
 
-          let resultTime =  ((endTime - startTime) / 1000);
+          let resultTime =  ((endTime - startTime) / 1000).toFixed(3);
           clearInterval(Interval);
 
           let name = prompt(`Twój czas to: ${resultTime}s. Podaj swoje imię:`);
+          !name ? name = 'NoName' : name;
           results[`${chosenLevel}`].push([name, resultTime])
-          /* results.push([name, resultTime]); */
+
           let elementToUpdate;
           if (chosenLevel === 'easy') {
             elementToUpdate = resultsListEasy;
@@ -359,14 +360,13 @@ const gameApp = () => {
   // Start of the game function
   function startGame() {
     // Game start time
-    console.time('test');
     startTime = new Date();
 
     // Starting with stoper
     clearInterval(Interval);
     Interval = setInterval(startTimer, 10);
     startTimer();
-    console.timeEnd('test')
+    
     // HTML elements style change
     canvas.scrollIntoView();
     window.scrollBy(0, -50);
@@ -401,36 +401,17 @@ const gameApp = () => {
 
   // ====== STOPER FUNCTION 
 
-  let seconds = 00; 
-  let tens = 00; 
-  let appendTens = document.querySelector(".tens");
-  let appendSeconds = document.querySelector(".seconds");
+  let appendTime = document.querySelector(".game_time");
   let Interval;
 
   function startTimer () {
-    tens++; 
-    
-    if(tens < 9){
-      appendTens.innerHTML = "0" + tens;
-    }
-    
-    if (tens > 9){
-      appendTens.innerHTML = tens;
-      
-    } 
-    
-    if (tens > 99) {
-      seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
-      tens = 0;
-      appendTens.innerHTML = "0" + 0;
-    }
-    
-    if (seconds > 9){
-      appendSeconds.innerHTML = seconds;
-    }
+    let currentTime = new Date();
+    let gameTime = ((currentTime - startTime)/1000).toFixed(2);
+    appendTime.innerHTML = gameTime;
   }
 }
+
+// ====== CHECK MOBILE 
 
 const mobileInfo = () => {
   const container = document.querySelector('.mobile_check');

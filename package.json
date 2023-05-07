@@ -16,6 +16,6 @@
     "nu-html-checker": "^0.1.0"
   },
   "dependencies": {
-    "gettext.js": "^1.0.0"
+    "gettext.js": "^1.2.0"
   }
 }
